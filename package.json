@@ -4,7 +4,7 @@
   "description": "An app to model an address book in Node",
   "main": "\u001b[D\u001b[D\u001b[D\u001bapp\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[C\u001b[C\u001b[C\u001b[C\u001b[.js)",
   "scripts": {
-    "test": "export NODE_ENV=test || set NODE_ENV=test && jasmine"
+    "test": "cross-env NODE_ENV=Dev node ./node_modules/jasmine/bin/jasmine.js"
   },
   "author": "Mariel",
   "repository": {
@@ -16,6 +16,7 @@
     "inquirer": "^5.1.0"
   },
   "devDependencies": {
+    "cross-env": "^5.1.6",
     "jasmine": "^3.1.0"
   }
 }
