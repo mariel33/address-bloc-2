@@ -131,22 +131,22 @@ describe('ContactController',() => {
                 expect(this.book.binarySearch([], 'Alloy')).toBeNull();
             });
 
-            it('should return null when contact is not found', (done) => {
+            it('should return null when contact is not found', () => {
                 this.book.addContact(...zelda)
                 .then(() => {
                     this.book.getContacts()
                     .then((contacts) => {
                         expect(this.book.binarySearch(sort(contacts), 'Alloy Rodriguez')).toBeNull();
-                        done();
+                        //done();
                     });
                 })
                 .catch((err) => {
                     console.log(err);
                     done();
                 });
-            });
+            }, 30000);
 
-            it('should return the contact if found', (done) => {
+            it('should return the contact if found', () => {
                 this.book.addContact(...alloy).then(() => {
                     this.book.addContact(...magus).then(() => {
                         this.book.addContact(...snake).then(() => {
@@ -156,7 +156,7 @@ describe('ContactController',() => {
                                     let contact = this.book.binarySearch(sort(contacts), 'Magus Johnson');
                                     expect(contact.name).toBe('Magus Johnson');
                                     expect(contact.phone).toBe('101-010-101');
-                                    done();
+                                    //done();
                                 });
                             });
                         });

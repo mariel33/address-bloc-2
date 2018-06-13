@@ -84,7 +84,7 @@ module.exports = class ContactController {
         return null;
     }
 
-    binarySearch(contact, target){
+    binarySearch(contacts, target){
         let min = 0;
         let max = contacts.length -1;
         let mid;
